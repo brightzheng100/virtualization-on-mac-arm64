@@ -324,21 +324,8 @@ Linux vagrant 5.15.0-76-generic #83-Ubuntu SMP Thu Jun 15 19:21:56 UTC 2023 aarc
 vagrant@vagrant:~$
 ```
 
-Once the VM's mission is completed, we can shut it down with:
-
-```sh
-$ VAGRANT_CWD=./vagrant/hello-world vagrant halt
-```
-
-OUTPUT:
-
-```log
-==> default: Attempting graceful shutdown of VM...
-```
-
-Please note that the provisioned VM isn't listed in VMware Fusion Player due to the default settings.
-
-We can update the `Vagrantfile` with `vp.gui = true` to explicitly bring the VM into VMware Fusion Player's VM list: 
+Please note that the provisioned VM isn't listed in VMware Fusion Player by default.
+But we can change the such default behaviour by updating the `Vagrantfile` with `vp.gui = true` to explicitly bring the VM into VMware Fusion Player's VM list: 
 
 ```ruby
 Vagrant.configure("2") do |config|
@@ -351,11 +338,40 @@ Vagrant.configure("2") do |config|
 end
 ```
 
+Then run `vagrant up`:
+
 ```sh
 $ VAGRANT_CWD=./vagrant/hello-world vagrant up
 ```
 
+And you should see the VM listed in the VMware Fusion Player UI:
+
 ![VMware Fusion Player with Vagrant Integrated](screenshots/fusion-vagrant-integrated.png)
+
+Once the VM's mission is completed, we can shut it down with:
+
+```sh
+$ VAGRANT_CWD=./vagrant/hello-world vagrant halt
+```
+
+OUTPUT:
+
+```log
+==> default: Attempting graceful shutdown of VM...
+```
+
+Or even destroy it, with:
+
+```sh
+$ VAGRANT_CWD=./vagrant/hello-world vagrant destroy
+```
+
+OUTPUT:
+
+```log
+    default: Are you sure you want to destroy the 'default' VM? [y/N] y
+==> default: Deleting the VM...
+```
 
 #### References
 
