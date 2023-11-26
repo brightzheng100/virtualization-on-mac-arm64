@@ -1,0 +1,8 @@
+Vagrant.configure("2") do |config|
+    config.vm.box = "sloopstash/ubuntu-22-04"
+    config.vm.provider "vmware_desktop" do |vp|
+        vp.memory = "2048"
+        vp.cpus = "1"
+  end
+end
+  
