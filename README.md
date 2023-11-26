@@ -377,4 +377,5 @@ OUTPUT:
 
 There are quite some good references to explore further for the Vagrant and VMware Fusion Player integration:
 - Hashcorp Vagrant's VMware plugin configuration page: https://developer.hashicorp.com/vagrant/docs/providers/vmware/configuration
+- You may discover the Vagrant boxes in Vagrant Cloud, here: https://app.vagrantup.com/boxes/search
 - sloopstash's kickstart-linux GitHub repo: https://github.com/sloopstash/kickstart-linux
